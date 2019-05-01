@@ -4,7 +4,17 @@ import math
 
 
 def recipe_batches(recipe, ingredients):
-    pass
+    comparison = []
+    if (recipe.keys() == ingredients.keys()):
+        for key in sorted(ingredients.keys()):
+            comparison.append((ingredients[key]//recipe[key]))
+        print(comparison)
+        if min(comparison) <= 0:
+            return 0
+        else:
+            return min(comparison)
+    else:
+        return 0
 
 
 if __name__ == '__main__':
